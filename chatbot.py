@@ -11,7 +11,8 @@ import urllib3
 import json
 import base64
 import re
- 
+from io import BytesIO
+
 # 페이지 레이아웃 설정
 st.set_page_config(layout="wide")
 
@@ -443,8 +444,13 @@ if selected == "음식점":
     def create_card(image_path, store_name, a, b, menu, hours, rating, reviews, address,distance):
         try:
             #st.image(image_path, width=600)
-            image = Image.open(image_path)
+            # URL에서 이미지 불러오기
+            response = requests.get(image_path)
+            image = Image.open(BytesIO(response.content))
+            
+            # 이미지 크기 조정 (예: 너비 600, 높이 300)
             resized_image = image.resize((600, 300))
+            # 이미지 출력
             st.image(resized_image)
          
             # 메뉴를 문자열로 변환하고 줄바꿈 처리를 적용
