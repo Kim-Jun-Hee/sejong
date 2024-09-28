@@ -475,7 +475,7 @@ if selected == "음식점":
             st.error(f"이미지 로딩 중 오류가 발생했습니다: {e}")
             
     # # 음식점 추천이 잘 돌아가는지 확인 하는 함수
-    #st.write(filtered_df)
+    st.write(filtered_df)
 
     # 그리드 형태로 이미지 및 정보 출력
     for i in range(0, len(filtered_df), 3):
