@@ -30,7 +30,7 @@ st.markdown("""
 with st.sidebar:
     st.markdown(f"""
                 <div style="display: flex; justify-content: flex-end; align-items: center; margin-right: 50px; margin-left: 50px;">
-                    <img src="data:image/png;base64,{base64.b64encode(open("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/logo.png", 'rb').read()).decode()}" style="width: 325px;">
+                    <img src="https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/logo.png" style="width: 325px;">
                 </div>
             """, unsafe_allow_html=True)
     st.markdown("<hr style='border:1px solid rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
