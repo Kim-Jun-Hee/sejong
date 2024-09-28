@@ -447,7 +447,7 @@ if selected == "음식점":
             response = requests.get(image_path)
             image = Image.open(BytesIO(response.content))
             # 이미지 크기 조정 (예: 너비 600, 높이 300)
-            resized_image = image.resize((600, 350))
+            resized_image = image.resize((600, 300))
             # 이미지 출력
             st.image(resized_image)
          
@@ -479,8 +479,8 @@ if selected == "음식점":
         except Exception as e:
             st.error(f"이미지 로딩 중 오류가 발생했습니다: {e}")
             
-    # # 음식점 추천이 잘 돌아가는지 확인 하는 함수
-    st.write(filtered_df)
+    # 음식점 추천이 잘 돌아가는지 확인 하는 함수
+    # st.write(filtered_df)
 
     # 그리드 형태로 이미지 및 정보 출력
     for i in range(0, len(filtered_df), 3):
