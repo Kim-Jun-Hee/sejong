@@ -17,7 +17,7 @@ import re
 # 데이터 불러오기 cp949
 
 
-df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/food.csv', encoding='latin1')
+df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/food.csv', encoding='utf-8')
 age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/나이대성별선호음식순위.csv",encoding='utf-8')
 
 
