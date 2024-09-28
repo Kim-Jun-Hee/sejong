@@ -442,8 +442,7 @@ if selected == "음식점":
     # 카드 생성 함수 정의
     def create_card(image_path, store_name, a, b, menu, hours, rating, reviews, address,distance):
         try:
-            st.image(Image.open(image_path).resize((600, 300)))
-
+            st.image(image_path, width=600)
             # 메뉴를 문자열로 변환하고 줄바꿈 처리를 적용
             menu_html = ""  # 기본 값을 빈 문자열로 설정
 
