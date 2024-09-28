@@ -810,7 +810,6 @@ elif selected == "병원 챗봇":
         unsafe_allow_html=True
     )
     
-    image_path = 'https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital_logo.png'
     
     # 배너 생성 함수
     def create_banner():
@@ -819,7 +818,7 @@ elif selected == "병원 챗봇":
         with left_col:
             st.markdown(f"""
                 <div style="display: flex; justify-content: flex-end; align-items: center; margin-right: 100px;">
-                    <img src="data:image/png;base64,{base64.b64encode(open(image_path, 'rb').read()).decode()}" style="width: 400px;">
+                    <img src="https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital_logo.png" style="width: 325px;">
                 </div>
             """, unsafe_allow_html=True)
 
