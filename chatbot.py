@@ -15,14 +15,9 @@ import re
 
 
 # 데이터 불러오기 cp949
-import urllib.request
-
-url = 'https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/파일명.csv'
-response = urllib.request.urlopen(url)
-csv_data = response.read().decode('utf-8')  # 인코딩을 명시적으로 utf-8로 디코딩
 
 
-#df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv', encoding='latin1')
+df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/food.csv', encoding='latin1')
 age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/나이대성별선호음식순위.csv",encoding='utf-8')
 
 
