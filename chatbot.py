@@ -480,7 +480,7 @@ if selected == "음식점":
         
         with cols[0]:
             if i < len(filtered_df):
-                image_file = f"https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/1.jpg"
+                image_file = f"https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/{filtered_df.iloc[i]['이미지파일명']}.jpg"
                 st.write("")
                 st.write("")
                 create_card(image_file, filtered_df.iloc[i]['음식점명'], filtered_df.iloc[i]['분류'], filtered_df.iloc[i]['최종분류'], filtered_df.iloc[i]['메뉴'], filtered_df.iloc[i]['운영시간'], filtered_df.iloc[i]['별점'], filtered_df.iloc[i]['리뷰수'], filtered_df.iloc[i]['주소'],filtered_df.iloc[i]['거리(km)'])
