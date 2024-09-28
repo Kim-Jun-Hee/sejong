@@ -660,7 +660,7 @@ elif selected == "병원 챗봇":
     # 특정 키워드에 따른 병원 정보 필터링 함수
     def filter_hospital_by_department(department,lat, lon):
         # 병원 정보 데이터 불러오기
-        df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/병원정보홈페이지활용수정.csv', encoding='cp949')
+        df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital.csv', encoding='cp949')
 
         # 현재 날짜와 시간 가져오기
         now = datetime.now()
