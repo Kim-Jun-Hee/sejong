@@ -245,7 +245,7 @@ if selected == "음식점":
             return None, None
 
     # 데이터 불러오기 cp949
-    df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv', encoding='utf-8')
+    df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/food.csv', encoding='utf-8')
     age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/agegender.csv",encoding='utf-8')
 
 
