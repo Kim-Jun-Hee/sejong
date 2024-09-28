@@ -443,13 +443,24 @@ if selected == "음식점":
     # 카드 생성 함수 정의
     def create_card(image_path, store_name, a, b, menu, hours, rating, reviews, address,distance):
         try:
-            # URL에서 이미지 불러오기
-            response = requests.get(image_path)
-            image = Image.open(BytesIO(response.content))
-            # 이미지 크기 조정 (예: 너비 600, 높이 300)
+            def load_image(url):
+                response = requests.get(url)
+                return Image.open(BytesIO(response.content))
+            
+            # 이미지 로드 및 크기 조정
+            image = load_image(image_path)
             resized_image = image.resize((600, 300))
+            
             # 이미지 출력
             st.image(resized_image)
+            
+            # # URL에서 이미지 불러오기
+            # response = requests.get(image_path)
+            # image = Image.open(BytesIO(response.content))
+            # # 이미지 크기 조정 (예: 너비 600, 높이 300)
+            # resized_image = image.resize((600, 300))
+            # # 이미지 출력
+            # st.image(resized_image)
          
             # 메뉴를 문자열로 변환하고 줄바꿈 처리를 적용
             menu_html = ""  # 기본 값을 빈 문자열로 설정
