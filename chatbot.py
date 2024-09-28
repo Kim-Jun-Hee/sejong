@@ -30,7 +30,7 @@ st.markdown("""
 with st.sidebar:
     st.markdown(f"""
                 <div style="display: flex; justify-content: flex-end; align-items: center; margin-right: 50px; margin-left: 50px;">
-                    <img src="data:image/png;base64,{base64.b64encode(open("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/logo.png", 'rb').read()).decode()}" style="width: 325px;">
+                    <img src="data:image/png;base64,{base64.b64encode(open("https://github.com/Kim-Jun-Hee/sejong/tree/main/logo.png", 'rb').read()).decode()}" style="width: 325px;">
                 </div>
             """, unsafe_allow_html=True)
     st.markdown("<hr style='border:1px solid rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
@@ -245,8 +245,8 @@ if selected == "음식점":
             return None, None
 
     # 데이터 불러오기 cp949
-    df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv", encoding='utf-8')
-    age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/나이대성별선호음식순위.csv",encoding='utf-8')
+    df = pd.read_csv("https://github.com/Kim-Jun-Hee/sejong/tree/main/음식점정보홈페이지활용_메뉴최종.csv", encoding='utf-8')
+    age_rankings_df = pd.read_csv("https://github.com/Kim-Jun-Hee/sejong/tree/main/나이대성별선호음식순위.csv",encoding='utf-8')
 
 
     # 현재 날짜와 시간 가져오기
@@ -276,7 +276,7 @@ if selected == "음식점":
         left_col, right_col = st.columns([1, 2])  # 왼쪽에 이미지, 오른쪽에 텍스트 배치
 
         with left_col:
-            st.image("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/2food.png", width=600)  # 원하는 이미지로 변경
+            st.image("https://github.com/Kim-Jun-Hee/sejong/tree/main/2food.png", width=600)  # 원하는 이미지로 변경
 
         with right_col:
             st.markdown("""
@@ -483,7 +483,7 @@ if selected == "음식점":
         
         with cols[0]:
             if i < len(filtered_df):
-                image_file = f"https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/{filtered_df.iloc[i]['이미지파일명']}"
+                image_file = f"https://github.com/Kim-Jun-Hee/sejong/tree/main/{filtered_df.iloc[i]['이미지파일명']}"
                 st.write("")
                 st.write("")
                 create_card(image_file, filtered_df.iloc[i]['음식점명'], filtered_df.iloc[i]['분류'], filtered_df.iloc[i]['최종분류'], filtered_df.iloc[i]['메뉴'], filtered_df.iloc[i]['운영시간'], filtered_df.iloc[i]['별점'], filtered_df.iloc[i]['리뷰수'], filtered_df.iloc[i]['주소'],filtered_df.iloc[i]['거리(km)'])
@@ -491,7 +491,7 @@ if selected == "음식점":
                 
         if i + 1 < len(filtered_df):
             with cols[1]:
-                image_file = f"https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/{filtered_df.iloc[i+1]['이미지파일명']}"
+                image_file = f"https://github.com/Kim-Jun-Hee/sejong/tree/main/{filtered_df.iloc[i+1]['이미지파일명']}"
                 st.write("")
                 st.write("")
                 create_card(image_file, filtered_df.iloc[i+1]['음식점명'], filtered_df.iloc[i+1]['분류'], filtered_df.iloc[i+1]['최종분류'], filtered_df.iloc[i+1]['메뉴'], filtered_df.iloc[i+1]['운영시간'], filtered_df.iloc[i+1]['별점'], filtered_df.iloc[i+1]['리뷰수'], filtered_df.iloc[i+1]['주소'],filtered_df.iloc[i+1]['거리(km)'])
@@ -499,7 +499,7 @@ if selected == "음식점":
                 
         if i + 2 < len(filtered_df):
             with cols[2]:
-                image_file = f"https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/{filtered_df.iloc[i+2]['이미지파일명']}"
+                image_file = f"https://github.com/Kim-Jun-Hee/sejong/tree/main/{filtered_df.iloc[i+2]['이미지파일명']}"
                 st.write("")
                 st.write("")
                 create_card(image_file, filtered_df.iloc[i+2]['음식점명'], filtered_df.iloc[i+2]['분류'], filtered_df.iloc[i+2]['최종분류'], filtered_df.iloc[i+2]['메뉴'], filtered_df.iloc[i+2]['운영시간'], filtered_df.iloc[i+2]['별점'], filtered_df.iloc[i+2]['리뷰수'], filtered_df.iloc[i+2]['주소'],filtered_df.iloc[i+2]['거리(km)'])
@@ -660,7 +660,7 @@ elif selected == "병원 챗봇":
     # 특정 키워드에 따른 병원 정보 필터링 함수
     def filter_hospital_by_department(department,lat, lon):
         # 병원 정보 데이터 불러오기
-        df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/병원정보홈페이지활용수정.csv', encoding='cp949')
+        df = pd.read_csv('https://github.com/Kim-Jun-Hee/sejong/tree/main/병원정보홈페이지활용수정.csv', encoding='cp949')
 
         # 현재 날짜와 시간 가져오기
         now = datetime.now()
@@ -810,7 +810,7 @@ elif selected == "병원 챗봇":
         unsafe_allow_html=True
     )
     
-    image_path = 'https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital_logo.png'
+    image_path = 'https://github.com/Kim-Jun-Hee/sejong/tree/main/hospital_logo.png'
     
     # 배너 생성 함수
     def create_banner():
