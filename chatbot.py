@@ -245,7 +245,12 @@ if selected == "음식점":
             return None, None
 
     # 데이터 불러오기 cp949
-    df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv",encoding='utf-8')
+    try:
+        df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv", encoding='utf-8')
+    except UnicodeDecodeError:
+        df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv", encoding='cp949')
+
+    #df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/음식점정보홈페이지활용_메뉴최종.csv",encoding='utf-8')
     age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/나이대성별선호음식순위.csv",encoding='utf-8')
 
 
