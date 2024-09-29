@@ -271,7 +271,7 @@ if selected == "음식점":
     }
 
     # 영어 요일 가져오기
-    english_weekday = now.strftime('%A')
+    english_weekday = current_kst_time.strftime('%A')
 
     # 한글 요일로 변환
     korean_weekday = weekday_map[english_weekday]
@@ -688,12 +688,6 @@ elif selected == "병원 챗봇":
     def filter_hospital_by_department(department,lat, lon):
         # 병원 정보 데이터 불러오기
         df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital.csv', encoding='cp949')
-
-        # 영어 요일 가져오기
-        english_weekday = now.strftime('%A')
-
-        # 한글 요일로 변환
-        korean_weekday = weekday_map[english_weekday]
         
         # 한국 표준 시간대 (KST) 불러오기
         kst = pytz.timezone('Asia/Seoul')
@@ -702,7 +696,13 @@ elif selected == "병원 챗봇":
         current_kst_time = datetime.now(kst)
         
         minute = current_kst_time.strftime('%H:%M')
+        
+        # 영어 요일 가져오기
+        english_weekday = current_kst_time.strftime('%A')
 
+        # 한글 요일로 변환
+        korean_weekday = weekday_map[english_weekday]
+        
         filtered_df = check_time_in_range(df,korean_weekday,minute,lat,lon,department)
         
         if len(filtered_df) != 0:
