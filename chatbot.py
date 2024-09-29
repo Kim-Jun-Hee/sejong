@@ -258,7 +258,9 @@ if selected == "음식점":
     current_kst_time = datetime.now(kst)
     
     minute = current_kst_time.strftime('%H:%M')
-
+    
+    english_weekday = current_kst_time.strftime('%A')  # 요일 이름 (예: Monday)
+    
     # 요일 영어로 매핑
     weekday_map = {
         'Monday': '월',
@@ -269,12 +271,10 @@ if selected == "음식점":
         'Saturday': '토',
         'Sunday': '일'
     }
-
-    # 영어 요일 가져오기
-    english_weekday = current_kst_time.strftime('%A')
-
+    
     # 한글 요일로 변환
     korean_weekday = weekday_map[english_weekday]
+    korean_weekday
 
     # 배너 생성 함수
     def create_banner():
@@ -673,17 +673,6 @@ elif selected == "병원 챗봇":
             print(f"Error {response.status_code}: {response.text}")
             return None, None
 
-    # 요일 영어로 매핑
-    weekday_map = {
-        'Monday': '월',
-        'Tuesday': '화',
-        'Wednesday': '수',
-        'Thursday': '목',
-        'Friday': '금',
-        'Saturday': '토',
-        'Sunday': '일'
-    }
-
     # 특정 키워드에 따른 병원 정보 필터링 함수
     def filter_hospital_by_department(department,lat, lon):
         # 병원 정보 데이터 불러오기
@@ -697,9 +686,19 @@ elif selected == "병원 챗봇":
         
         minute = current_kst_time.strftime('%H:%M')
         
-        # 영어 요일 가져오기
-        english_weekday = current_kst_time.strftime('%A')
-
+        english_weekday = current_kst_time.strftime('%A')  # 요일 이름 (예: Monday)
+        
+        # 요일 영어로 매핑
+        weekday_map = {
+            'Monday': '월',
+            'Tuesday': '화',
+            'Wednesday': '수',
+            'Thursday': '목',
+            'Friday': '금',
+            'Saturday': '토',
+            'Sunday': '일'
+        }
+        
         # 한글 요일로 변환
         korean_weekday = weekday_map[english_weekday]
         
