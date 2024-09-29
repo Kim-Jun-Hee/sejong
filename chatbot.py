@@ -255,12 +255,11 @@ if selected == "음식점":
     kst = pytz.timezone('Asia/Seoul')
     
     # 현재 한국 시간
-    current_kst_time = datetime.now(kst)
+    now = datetime.now(kst)
     
-    minute = current_kst_time.strftime('%H:%M')
-    
-    english_weekday = current_kst_time.strftime('%A')  # 요일 이름 (예: Monday)
-    
+    minute = now.strftime('%H:%M')
+    english_weekday = now.strftime('%A')  # 요일 이름 (예: Monday)
+
     # 요일 영어로 매핑
     weekday_map = {
         'Monday': '월',
@@ -682,11 +681,11 @@ elif selected == "병원 챗봇":
         kst = pytz.timezone('Asia/Seoul')
         
         # 현재 한국 시간
-        current_kst_time = datetime.now(kst)
+        now = datetime.now(kst)
         
-        minute = current_kst_time.strftime('%H:%M')
-        
-        english_weekday = current_kst_time.strftime('%A')  # 요일 이름 (예: Monday)
+        minute = now.strftime('%H:%M')
+        english_weekday = now.strftime('%A')  # 요일 이름 (예: Monday)
+
         
         # 요일 영어로 매핑
         weekday_map = {
