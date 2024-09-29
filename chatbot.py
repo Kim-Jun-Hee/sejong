@@ -1063,7 +1063,7 @@ elif selected == "병원 챗봇":
                 hos = '정신건강의학과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
-                    bot_response = "죄송합니다. 현재 운영중인 종합병원을 찾을 수 없습니다."
+                    bot_response = "죄송합니다. 현재 해당 진료과목의 운영중인 병원을 찾을 수 없습니다."
                 else:
                     bot_response = f"현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
