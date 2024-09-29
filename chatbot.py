@@ -491,7 +491,7 @@ if selected == "음식점":
             st.error(f"이미지 로딩 중 오류가 발생했습니다: {e}")
             
     # 음식점 추천이 잘 돌아가는지 확인 하는 함수
-    # st.write(filtered_df)
+    st.write(minute)
 
     # 그리드 형태로 이미지 및 정보 출력
     for i in range(0, len(filtered_df), 3):
@@ -952,7 +952,7 @@ elif selected == "병원 챗봇":
                     bot_response = "죄송합니다. 현재 해당 진료과목의 운영중인 병원을 찾을 수 없습니다."
                 else:
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
-                    bot_response += minute + "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
+                    bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
             elif any(keyword in user_input for keyword in ['내성발톱','뾰루지','보톡스','여드름','두드러기','피부','트러블','두피','제모','건선','발진','아토피','백반증','색소','가려']):
                 hos = '피부과'
