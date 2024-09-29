@@ -12,6 +12,7 @@ import json
 import base64
 import re
 from io import BytesIO
+import pytz
 
 # 페이지 레이아웃 설정
 st.set_page_config(layout="wide")
@@ -250,8 +251,13 @@ if selected == "음식점":
     age_rankings_df = pd.read_csv("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/agegender.csv",encoding='utf-8')
 
 
-    # 현재 날짜와 시간 가져오기
-    now = datetime.now()
+    # 한국 표준 시간대 (KST) 불러오기
+    kst = pytz.timezone('Asia/Seoul')
+    
+    # 현재 한국 시간
+    current_kst_time = datetime.now(kst)
+    
+    minute = current_kst_time.strftime('%H:%M')
 
     # 요일 영어로 매핑
     weekday_map = {
@@ -269,8 +275,6 @@ if selected == "음식점":
 
     # 한글 요일로 변환
     korean_weekday = weekday_map[english_weekday]
-
-    minute = now.strftime('%H:%M')   # 현재 시간 (예: 05:30)
 
     # 배너 생성 함수
     def create_banner():
@@ -685,15 +689,19 @@ elif selected == "병원 챗봇":
         # 병원 정보 데이터 불러오기
         df = pd.read_csv('https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/hospital.csv', encoding='cp949')
 
-        # 현재 날짜와 시간 가져오기
-        now = datetime.now()
-
         # 영어 요일 가져오기
         english_weekday = now.strftime('%A')
 
         # 한글 요일로 변환
         korean_weekday = weekday_map[english_weekday]
-        minute = now.strftime('%H:%M') 
+        
+        # 한국 표준 시간대 (KST) 불러오기
+        kst = pytz.timezone('Asia/Seoul')
+        
+        # 현재 한국 시간
+        current_kst_time = datetime.now(kst)
+        
+        minute = current_kst_time.strftime('%H:%M')
 
         filtered_df = check_time_in_range(df,korean_weekday,minute,lat,lon,department)
         
