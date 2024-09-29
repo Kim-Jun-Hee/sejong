@@ -919,7 +919,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['머리','기절','두통','편두통','유즙','마비','기억력']) or ("뇌" in user_input and "검사" in user_input):
+            elif any(keyword in user_input for keyword in ['머리','기절','두통','편두통','유즙','마비','기억력','어지러','뇌졸','저림','경련']) or ("뇌" in user_input and "검사" in user_input):
                 hos = '신경과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -928,7 +928,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
             
-            elif any(keyword in user_input for keyword in ['허리','거북목','디스크']) or ("목" in user_input and "디스크" in user_input) or ("다리" in user_input and "저림" in user_input) or ("다리" in user_input and "쥐" in user_input):
+            elif any(keyword in user_input for keyword in ['허리','거북목','디스크','뇌종양','뇌출혈','뇌손상','감각']) or ("목" in user_input and "디스크" in user_input) or ("다리" in user_input and "저림" in user_input) or ("다리" in user_input and "쥐" in user_input):
                 hos = '신경외과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -946,7 +946,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['다리','어깨','관절','손목','발목','인대','힘줄','근육']) or ("뼈" in user_input and "부러" in user_input) or ("발" in user_input and "통증" in user_input):
+            elif any(keyword in user_input for keyword in ['다리','어깨','관절','손목','발목','인대','힘줄','근육','골절','뼈','손가락','발가락']) or ("발" in user_input and "통증" in user_input):
                 hos = '정형외과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -955,7 +955,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['내성발톱','뾰루지','보톡스','여드름','두드러기','피부','트러블','두피','제모']):
+            elif any(keyword in user_input for keyword in ['내성발톱','뾰루지','보톡스','여드름','두드러기','피부','트러블','두피','제모','건선','발진','아토피','백반증','색소','가려']):
                 hos = '피부과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -964,7 +964,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['몸살','기침','볼거리','성대']) or ("코" in user_input and "막" in user_input) or ("목" in user_input and "피" in user_input) or ("귀" in user_input and "물" in user_input) or ("귀" in user_input and "벌레" in user_input) or ("귀" in user_input and "먹먹" in user_input) or ("목" in user_input and "부" in user_input):
+            elif any(keyword in user_input for keyword in ['몸살','기침','볼거리','성대','중이염','비염','편도염','인후염','난청','인후통','청력','코막','코골','이명','축농증']) or ("코" in user_input and "막" in user_input) or ("목" in user_input and "피" in user_input) or ("귀" in user_input and "물" in user_input) or ("귀" in user_input and "벌레" in user_input) or ("귀" in user_input and "먹먹" in user_input) or ("목" in user_input and "부" in user_input):
                 hos = '이비인후과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -982,7 +982,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['애들','아이','아기']):
+            elif any(keyword in user_input for keyword in ['애들','아이','아기','성장']) or ("소아" in user_input and "발열" in user_input) or ("소아" in user_input and "천식" in user_input):
                 hos = '소아청소년과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -991,7 +991,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['임신','생리','질염','자궁']) or ("여성" in user_input and "질환" in user_input):
+            elif any(keyword in user_input for keyword in ['임신','생리','질염','자궁','불임','난소']) or ("여성" in user_input and "질환" in user_input):
                 hos = '산부인과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -1000,7 +1000,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
                     
-            elif any(keyword in user_input for keyword in ['배뇨','요로','전립선','생식기','방광','신장']):
+            elif any(keyword in user_input for keyword in ['배뇨','요로','전립선','생식기','방광','신장','혈뇨','오줌','성기능','요도','발기']):
                 hos = '비뇨의학과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -1009,7 +1009,7 @@ elif selected == "병원 챗봇":
                     bot_response = f"해당 부위는 {hos}에 가시면 될 것 같습니다.<br> 현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
             
-            elif any(keyword in user_input for keyword in ['눈','결막','각막','수정체','녹내장','사시','시신경','눈꺼풀','시력']) or ("눈" in user_input and "외상" in user_input):
+            elif any(keyword in user_input for keyword in ['눈','결막','각막','수정체','녹내장','사시','시신경','눈꺼풀','시력','안구','백내장','녹내장','눈물','눈부심','망막']) or ("눈" in user_input and "외상" in user_input) or ("눈" in user_input and "염증" in user_input):
                 hos = '안과'
                 filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
                 if filtered_hospital_info == 0:
@@ -1052,6 +1052,22 @@ elif selected == "병원 챗봇":
                 else:
                     bot_response = f"현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
                     bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
+            elif any(keyword in user_input for keyword in ['불안','우울','스트레스','불면','공황','수면','조울','정신']):
+                hos = '정신건강의학과'
+                filtered_hospital_info = filter_hospital_by_department([hos],lat, lon)
+                if filtered_hospital_info == 0:
+                    bot_response = "죄송합니다. 현재 운영중인 종합병원을 찾을 수 없습니다."
+                else:
+                    bot_response = f"현재 운영중인 가장 가까운 {hos} 병원을 알려드리겠습니다."
+                    bot_response += "\n\n" + filtered_hospital_info  # 병원 정보 챗봇 응답에 추가
+            elif any(keyword in user_input for keyword in ['머해','머하고','뭐하고']):
+                bot_response = '당신 기다리고 있었죠! 😊 뭐 도와드릴까요?'
+            elif any(keyword in user_input for keyword in ['바보']):
+                bot_response = '에이, 나 챗봇인데 그런 말은 조금 슬프네요! 😢 그래도 뭐든 도와줄게요!'
+            elif any(keyword in user_input for keyword in ['멍청']):
+                bot_response = '저는 멍청이가 아니에요. 도움이 필요하면 말씀해주세요!'
+            elif any(keyword in user_input for keyword in ['시러','싫어']):
+                bot_response = '에이~ 그럴 리 없어요! 한 번만 더 생각해봐요 😉'
             else:
                 bot_response = "🔍 관련 정보를 찾을 수 없습니다."
 
