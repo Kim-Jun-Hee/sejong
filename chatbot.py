@@ -570,31 +570,39 @@ elif selected == "병원 챗봇":
         
         return distance
         
-    # 시간 문자열을 datetime 객체로 변환하는 함수
-    def time_in_range1(start_time_m,end_time_m,start_time_r,end_time_r,check_time):
-        start_time_m = datetime.strptime(start_time_m,'%H:%M')
-        end_time_m = datetime.strptime(end_time_m,'%H:%M')
-        start_time_r = datetime.strptime(start_time_r,'%H:%M')
-        end_time_r = datetime.strptime(end_time_r,'%H:%M')
-        check_time = datetime.strptime(check_time,'%H:%M')
+    # 자정을 넘기는 시간을 처리하는 함수
+    def is_open(open_time, close_time, check_time):
+        if close_time < open_time:
+            return check_time >= open_time or check_time < close_time
+        return open_time <= check_time < close_time
         
-        # 휴게 시간일 경우 False 반환
-        if start_time_r <= check_time <= end_time_r:
-            return False
-        elif start_time_m <= check_time <= end_time_m:
+    # 시간 문자열을 datetime 객체로 변환하는 함수 (휴게시간 포함)
+    def time_in_range1(start_time_m, end_time_m, start_time_r, end_time_r, check_time):
+        start_time_m = datetime.strptime(start_time_m, '%H:%M')
+        end_time_m = datetime.strptime(end_time_m, '%H:%M')
+        start_time_r = datetime.strptime(start_time_r, '%H:%M')
+        end_time_r = datetime.strptime(end_time_r, '%H:%M')
+        check_time = datetime.strptime(check_time, '%H:%M')
+
+        if start_time_m == end_time_m:
             return True
-        else:
-            return False
-    
-    def time_in_range2(start_time_m,end_time_m,check_time):
-        start_time_m = datetime.strptime(start_time_m,'%H:%M')
-        end_time_m = datetime.strptime(end_time_m,'%H:%M')
-        check_time = datetime.strptime(check_time,'%H:%M')
-        
-        if start_time_m <= check_time <= end_time_m:
+
+        if is_open(start_time_m, end_time_m, check_time):
+            if start_time_r <= check_time <= end_time_r:
+                return False
             return True
-        else:
-            return False
+        return False
+
+    # 휴게 시간 없이 자정을 넘기는 시간 처리
+    def time_in_range2(start_time_m, end_time_m, check_time):
+        start_time_m = datetime.strptime(start_time_m, '%H:%M')
+        end_time_m = datetime.strptime(end_time_m, '%H:%M')
+        check_time = datetime.strptime(check_time, '%H:%M')
+
+        if start_time_m == end_time_m:
+            return True
+
+        return is_open(start_time_m, end_time_m, check_time)
         
     def check_availability(row,day,check_time):
         start_time_m = f'{day}요일진료시작시간'
