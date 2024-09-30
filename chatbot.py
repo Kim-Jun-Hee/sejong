@@ -273,7 +273,6 @@ if selected == "음식점":
     
     # 한글 요일로 변환
     korean_weekday = weekday_map[english_weekday]
-    korean_weekday
 
     # 배너 생성 함수
     def create_banner():
@@ -492,9 +491,7 @@ if selected == "음식점":
         
         except Exception as e:
             st.error(f"이미지 로딩 중 오류가 발생했습니다: {e}")
-            
-    # 음식점 추천이 잘 돌아가는지 확인 하는 함수
-    st.write(minute)
+        
 
     # 그리드 형태로 이미지 및 정보 출력
     for i in range(0, len(filtered_df), 3):
