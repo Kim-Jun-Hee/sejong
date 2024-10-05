@@ -279,7 +279,7 @@ if selected == "음식점":
         left_col, right_col = st.columns([1, 2])  # 왼쪽에 이미지, 오른쪽에 텍스트 배치
 
         with left_col:
-            st.image("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/2food.png", width=100)  # 원하는 이미지로 변경
+            st.image("https://raw.githubusercontent.com/Kim-Jun-Hee/sejong/main/2food.png", width=400)  # 원하는 이미지로 변경
 
         with right_col:
             st.markdown("""
